@@ -4,9 +4,9 @@ import Main from './Components/main.js';
 
 function App() {
   return (
-    <div className="app col">
-      <Header className="row"/>
-      <Main className="row"/>
+    <div className="app d-flex flex-column align-items-center p-0 vh-100">
+      <Header/>
+      <Main/>
     </div>
   );
 }
