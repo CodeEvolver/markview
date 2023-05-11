@@ -2,42 +2,37 @@ import React, {useState} from 'react';
 import {marked} from 'marked';
 //let marked = require("marked");
 
-function Main() {
-    const [mode, setMode] = useState('preview');
+function Main({theme}) {
     const [markdown, setMarkdown] = useState("");
-    const edit = () => {
-        setMode('edit');
-    }
-    const preview = () => {
-        setMode('preview');
-    }
     const updateMarkdown = (modifiedMarkdown) => {
         setMarkdown(modifiedMarkdown);
     }
     var style = {
-        backgroundColor: "#EAEEED",
+        backgroundColor: "#EAE8F6",
+        height: "90%",
+    }
+    var darkStyle = {
+        backgroundColor: "#00003E",
         height: "90%",
     }
     var editorPreviewStyle = {
-        backgroundColor: "#C9C9D0",
-        height: "90%"
+        height: "75%",
     }
-    var buttonStyle = {
-        color: "#00006A",
-        backgroundColor: "#C9C9D0",
-        fontWeight: "400",
+    var headerStyle = {
+        color: "#1A237E",
+        fontWeight: "500",
+        height: "",
     }
     
     return (
-        <div className="app-main w-100 px-sm-5 px-2 h-100" style={style}>
-            <div className="row w-100 m-0 h-0">
-                <button style={buttonStyle}  className="col-6 border-0 btn rounded-0 border-end border-light" onClick={() => edit()}>Edit</button>
-                <button style={buttonStyle}  className="col-6 border-0 btn rounded-0 border-start border-light" onClick={() => preview()}>Preview</button>
+        <div className="app-main w-100 px-sm-5 px-2 h-100 d-flex flex-column" style={theme === "light"?style: darkStyle}>
+            <div className="w-100 shadow d-flex flex-row rounded-top bg-light align-items-center justify-content-between px-3" style={headerStyle}>
+                <p  className="border-0">Edit</p>
+                <p className="border-0">Preview</p>
             </div>
-            <div className="w-100 m-0" style={editorPreviewStyle}>
-                {mode === "preview"? 
-                <div id="preview" className="w-100 h-100" dangerouslySetInnerHTML={{__html:marked(markdown)}}></div>: 
-                <textarea id="editor" className="w-100 h-100 border-0" value={markdown} onChange={(event)=> updateMarkdown(event.target.value)} />}
+            <div className="w-100 m-0 d-flex flex-row shadow rounded-bottom bg-light" style={editorPreviewStyle}> 
+                <textarea id="editor" className="w-50 h-100 border-0 bg-transparent border-end border-dark p-2" value={markdown} onChange={(event)=> updateMarkdown(event.target.value)}/>
+                <div id="preview" className="w-50 h-100 overflow-auto border-start border-dark p-2" dangerouslySetInnerHTML={{__html:marked(markdown)}}></div>
             </div>
         </div>
     );
