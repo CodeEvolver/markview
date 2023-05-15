@@ -8,10 +8,9 @@ marked.use({
     smartypants: false,
     xhtml: false
 });
-//let marked = require("marked");
 
 function Main({theme}) {
-    let defaultValue = '# Living God \n## Jesus Christ \n`console.log("God in me")` \n```\nfunction=()=>{\nalert("The Love of God");\n}\n``` \nFather | Son | Holy Spirit \n--------- | --------- | --------- \nThe LORD | my Lord | Spirit of Truth \n**Jireh** \n' ;
+    let defaultValue = '# Living God \n## Jesus Christ \n`console.log("God in me")` \n```\nfunction=()=>{\nalert("The Love of God");\n}\n``` \nYou can also make text **bold**... whoa! \nOr _italic_.\nOr... wait for it... **_both!_**\nAnd feel free to go crazy ~~crossing stuff out~~.\nTheres also [links](https://www.freecodecamp.org), and \n> Block Quotes!\nAnd if you want to get really crazy, even tables: \nWild Header | Crazy Header | Another Header? \n------------ | ------------- | ------------- \nYour content can | be here, and it | can be here....\nAnd here. | Okay. | I think we get it.\n- And of course there are lists. \n - Some are bulleted. \n  - With different indentation levels. \n   - That look like this. \n1. And there are numbered lists too. \n1. Use just 1s if you want! \n1. And last but not least, lets not forget embedded images: \n![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)' ;
     const [markdown, setMarkdown] = useState(defaultValue);
     const updateMarkdown = (modifiedMarkdown) => {
         setMarkdown(modifiedMarkdown);
@@ -60,7 +59,7 @@ function Main({theme}) {
                 <p className="border-0">Preview</p>
             </div>
             <div className="w-100 m-0 d-flex flex-row shadow rounded-bottom" style={theme==="light"?editorPrevStyle: darkEditorPrevStyle}> 
-                <textarea id="editor" className="w-50 h-100 border-0 bg-transparent border-end border-dark p-2" value={markdown} style={theme==="dark"?editorDarkText: editorLightText} onChange={(event)=> updateMarkdown(event.target.value)}/>
+                <textarea id="editor" className="textarea w-50 h-100 border-0 bg-transparent border-end border-dark p-2" value={markdown} style={theme==="dark"?editorDarkText: editorLightText} onChange={(event)=> updateMarkdown(event.target.value)}/>
                 <div id="preview" className="w-50 h-100 overflow-auto border-start border-dark p-2" dangerouslySetInnerHTML={{__html:marked(markdown)}}></div>
             </div>
         </div>

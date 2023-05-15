@@ -18,6 +18,7 @@ function Header({theme, toggleTheme}) {
     return (
         <div className="app-header w-100 px-2 px-sm-5 d-flex flex-row align-items-center justify-content-between" style={theme === "light"? style: darkStyle}>
             <p className="">MarkView</p>
+
             <button className="border-0 bg-transparent" onClick={toggleTheme}>{theme === "light"?<img className="" src={darkIcon} alt="icon"/>:<img className="" src={lightIcon} alt="icon"/>}</button>
         </div>
     );
