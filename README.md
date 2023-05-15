@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# MarkView
+A certificate project challenged by freeCodeCamp. It's a markdown viewer built with react, bootstrap and markedjs
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
