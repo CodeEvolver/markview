@@ -17,7 +17,7 @@ function Main({theme}) {
     }
     var style = {
         backgroundColor: theme==="light"? "#EAE8F6": "#000020",
-        height: "90%",
+        height: "93%",
     }
     var editorPrevStyle = {
         height: "75%",
@@ -42,7 +42,7 @@ function Main({theme}) {
     }
     
     return (
-        <div className="app-main w-100 px-sm-5 px-2 h-100 d-flex flex-column justify-content-center " style={style}>
+        <div className="app-main w-100 px-sm-5 px-2 d-flex flex-column justify-content-center " style={style}>
             <div className="w-100 shadow d-flex flex-row rounded-top align-items-center justify-content-between px-3" style={headerStyle}>
                 <p  className="border-0">Edit</p>
                 <p className="border-0">Preview</p>
