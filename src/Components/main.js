@@ -20,7 +20,7 @@ function Main({theme}) {
         height: "93%",
     }
     var editorPrevStyle = {
-        height: "75%",
+        height: "85%",
         backgroundColor: theme==="light"? "#F5F5F5": "#00002F",
         color: theme==="light"? "#1A237E": "#EAE8F6",
         border: theme==="dark" && "2px solid #EAE8F6",
