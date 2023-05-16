@@ -26,15 +26,15 @@ function Main({theme}) {
         border: theme==="dark" && "2px solid #EAE8F6",
     }
     var headerStyle = {
-        color: theme==="light"? "#1A237E": "#A132E7",
+        color: theme==="light"? "#1A237E": "#EAE8F6",
         fontWeight: "500",
         height: "7%",
         backgroundColor: theme==="light"? "#F5F5F5": "#00002F",
         border: theme==="dark" && "2px solid #EAE8F6",
-        borderBottom: theme==="light" && "2px solid #AE8E6F",
+        borderBottom: theme==="light" && "1px solid #AE8E6F",
     }
     var editorStyle = {
-        color: theme==="light"? "#1A237E": "#A132E7",
+        color: theme==="light"? "#1A237E": "#EAE8F6",
         resize: "horizontal",
         overflow:"auto",
     }
