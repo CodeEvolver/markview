@@ -20,36 +20,38 @@ function Main({theme}) {
         height: "93%",
     }
     var editorPrevStyle = {
-        height: "85%",
+        height: "83%",
         backgroundColor: theme==="light"? "#F5F5F5": "#00002F",
         color: theme==="light"? "#1A237E": "#EAE8F6",
         border: theme==="dark" && "2px solid #EAE8F6",
     }
     var headerStyle = {
-        color: theme==="light"? "#1A237E": "#EAE8F6",
+        color: theme==="light"? "#1A237E": "#A132E7",
         fontWeight: "500",
-        height: "",
+        height: "7%",
         backgroundColor: theme==="light"? "#F5F5F5": "#00002F",
         border: theme==="dark" && "2px solid #EAE8F6",
+        borderBottom: theme==="light" && "2px solid #AE8E6F",
     }
     var editorStyle = {
-        color: theme==="light"? "#1A237E": "#EAE8F6",
+        color: theme==="light"? "#1A237E": "#A132E7",
         resize: "horizontal",
         overflow:"auto",
     }
     var prevStyle = {
-        overflow:"auto"
+        overflow:"auto",
+        borderLeft: theme==="light"? "1px solid #AE8E6F": "1px solid #EAE8F6",
     }
     
     return (
-        <div className="app-main w-100 px-sm-5 px-2 d-flex flex-column justify-content-center " style={style}>
+        <div className="app-main w-100 px-sm-5 px-2 d-flex flex-column justify-content-center" style={style}>
             <div className="w-100 shadow d-flex flex-row rounded-top align-items-center justify-content-between px-3" style={headerStyle}>
-                <p  className="border-0">Edit</p>
-                <p className="border-0">Preview</p>
+                <p  className="border-0 my-auto">Edit</p>
+                <p className="border-0 my-auto">Preview</p>
             </div>
             <div className="w-100 m-0 d-flex flex-row shadow rounded-bottom" style={editorPrevStyle}> 
-                <textarea id="editor" className="textarea w-50 h-100 border-0 bg-transparent border-end border-dark p-2 flex-grow-1" value={markdown} style={ editorStyle} onChange={(event)=> updateMarkdown(event.target.value)}/>
-                <div id="preview" className="w-50 h-100 overflow-auto border-start border-dark p-2 flex-grow-3" style={prevStyle} dangerouslySetInnerHTML={{__html:marked(markdown)}}/>
+                <textarea id="editor" className="textarea w-50 h-100 bg-transparent p-2 flex-grow-1 border-0" value={markdown} style={ editorStyle} onChange={(event)=> updateMarkdown(event.target.value)}/>
+                <div id="preview" className="w-50 h-100 overflow-auto p-2 flex-grow-3" style={prevStyle} dangerouslySetInnerHTML={{__html:marked(markdown)}}/>
             </div>
         </div>
     );
